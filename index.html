@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Family Book</title>
+</head>
+<body>
+<center><p id="firstp">My family Book</p>
+
+     <img id="album"src="download.png">
+     <div>
+          <button type="button"
+     onclick="nextslide()"> Next family member </button>
+     </div>
+     <p id="reasontext">Cover page</p>
+     
+<script>var images=[
+     "papa.jpg",
+     "mummy.jpg",
+     "mithi.jpg",
+     "me.jpg",
+     "download.png"
+     ];
+
+var text=[
+     "Deonil Karna",
+     "Soniya Karn",
+     "Stuti Karn",
+     "Vaibhavi Karn",
+     "Cover Page"
+     ];
+     var o = 1;
+     var y = 0;
+
+ function next() { 
+
+  if(o == 4) {
+  o=0;
+  document.getElementById("firstp").style.display = "none";
+  };
+
+  document.getElementById("Family").src = images[o];
+  o++;
+
+  if(y == 4){
+     y=0; 
+     }; 
+  
+  document.getElementById("reasontext").innerHTML=text[y]; 
+  y++;
+
+};
+
+</script>
+
+</html>
