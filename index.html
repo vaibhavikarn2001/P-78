@@ -3,52 +3,32 @@
 <title>Family Book</title>
 </head>
 <body>
-<center><p id="firstp">My family Book</p>
+<center><h1 id="firstp">My family Book</h1>
 
      <img id="album"src="download.png">
      <div>
           <button type="button"
-     onclick="nextslide()"> Next family member </button>
+     onclick="update()"> Next family member </button>
      </div>
      <p id="reasontext">Cover page</p>
      
-<script>var images=[
-     "papa.jpg",
-     "mummy.jpg",
-     "mithi.jpg",
-     "me.jpg",
-     "download.png"
-     ];
-
-var text=[
-     "Deonil Karna",
-     "Soniya Karn",
-     "Stuti Karn",
-     "Vaibhavi Karn",
-     "Cover Page"
-     ];
-     var o = 1;
-     var y = 0;
-
- function next() { 
-
-  if(o == 4) {
-  o=0;
-  document.getElementById("firstp").style.display = "none";
-  };
-
-  document.getElementById("Family").src = images[o];
-  o++;
-
-  if(y == 4){
-     y=0; 
-     }; 
-  
-  document.getElementById("reasontext").innerHTML=text[y]; 
-  y++;
-
-};
-
+<script>  var images = ["download.png","papa.jpg", "mummy.jpg" , "mithi.jpg", "me.jpg",];
+     var names = ["Family Book","Deonil Karna", "Soniya Karn", "Stuti Karn", "Vaibhavi Karn", ];
+     var i = 0;
+     function update()
+     {
+         i++;
+         var numbers_of_family_member_in_array = 4
+         if(i > numbers_of_family_member_in_array )
+         {
+             i = 0;
+         }
+         var updatedImage = images[i];
+         var updatedName  = names[i];
+         document.getElementById("album").src = updatedImage;
+         document.getElementById("reasontext").innerHTML = updatedName;
+     }
 </script>
-
+</center>
+</body>
 </html>
